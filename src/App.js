@@ -1,5 +1,6 @@
 import "./App.css";
 import SVGCurve from "./SVGCurve";
+import SVGTriangle from "./SVGTriangle";
 import { useWindowDimensions } from "./useWindowDimensions";
 
 function App() {
@@ -7,6 +8,8 @@ function App() {
 
   const svgWidth = width / 2;
   const svgHeight = height / 2;
+  const triWidth = 30;
+  const triHeight = 15;
 
   const curve1 = {
     width: svgWidth,
@@ -19,6 +22,13 @@ function App() {
     strokeColor: "red",
   };
 
+  const triangle1 = {
+    width: triWidth,
+    height: triHeight,
+    startXY: [triWidth, triWidth / 2],
+    orientation: "right",
+  };
+
   return (
     <div className="App">
       <h1>SVG Tests</h1>
@@ -28,6 +38,7 @@ function App() {
         <br />
         Resize window for demo
       </p>
+      <SVGTriangle data={triangle1} />
     </div>
   );
 }
