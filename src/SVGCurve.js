@@ -18,7 +18,7 @@ export default function SVGCurve({
       height={height}
       xmlns="http://www.w3.org/2000/svg"
       style={{ border: "1px solid" }}
-      stroke-width={strokeWidth}
+      strokeWidth={strokeWidth}
     >
       <path
         d={`M ${startXY[0]} ${startXY[1]} Q ${curveXY[0]} ${curveXY[1]}, ${centerXY[0]} ${centerXY[1]} T ${endXY[0]} ${endXY[1]}`}
