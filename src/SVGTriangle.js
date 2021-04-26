@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function SVGTriangle({
-  data: { width = 30, height = 15, orientation = "right" },
+  props: { width = 30, height = 15, orientation = "right" },
 }) {
   const coords = {
     right: [
@@ -36,6 +36,7 @@ export default function SVGTriangle({
     >
       <polygon
         fill="black"
+        stroke="black"
         points={`${coords[orientation][0][0]}, ${coords[orientation][0][1]}  ${coords[orientation][1][0]}, ${coords[orientation][1][1]} ${coords[orientation][2][0]}, ${coords[orientation][2][1]} `}
       />
     </svg>

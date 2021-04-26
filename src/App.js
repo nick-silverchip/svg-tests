@@ -1,6 +1,7 @@
 import "./App.css";
 import SVGCurve from "./SVGCurve";
 import SVGTriangle from "./SVGTriangle";
+import SVGArrow from "./SVGArrow";
 import { useWindowDimensions } from "./useWindowDimensions";
 
 function App() {
@@ -29,16 +30,24 @@ function App() {
     orientation: "right",
   };
 
+  const arrowProps = {
+    headWidth: 20,
+    headLength: 40,
+  };
+
   return (
     <div className="App">
       <h1>SVG Tests</h1>
-      <SVGCurve curve={curve1} />
-      <p>
+      {/* <SVGCurve curve={curve1} /> */}
+      {/* <p>
         Dynamic Deformable SVG Shape
         <br />
         Resize window for demo
-      </p>
-      <SVGTriangle data={triangle1} />
+      </p> */}
+      {/* <SVGTriangle props={triangle1} /> */}
+      <div class="container">
+        <SVGArrow props={arrowProps} />
+      </div>
     </div>
   );
 }
