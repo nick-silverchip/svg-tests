@@ -3,7 +3,7 @@ import SVGCurve from "./SVGCurve";
 import SVGTriangle from "./SVGTriangle";
 
 export default function SVGArrow({
-  props: { headWidth = 20, headLength = 40 },
+  props: { headWidth = 20, headLength = 25 },
 }) {
   const ref = useRef({ current: { clientHeight: 0, clientWidth: 0 } });
   const [containerWidth, setContainerWidth] = useState(0);
@@ -18,9 +18,12 @@ export default function SVGArrow({
     width: containerWidth - headLength,
     height: containerHeight,
     startXY: [0, 3],
-    endXY: [containerWidth - headLength, containerHeight - headWidth / 2.5],
+    endXY: [
+      containerWidth - headLength + 10,
+      containerHeight - headWidth / 2.5,
+    ],
     centerXY: [containerWidth / 2, (containerHeight - headWidth / 2) / 2],
-    curveXY: [containerWidth / 3, 0],
+    curveXY: [containerWidth / 2, 0],
     strokeWidth: 3,
     strokeColor: "#000",
   };
@@ -35,10 +38,12 @@ export default function SVGArrow({
     orientation: "right",
   };
 
+  const pointerStyles = {};
+
   return (
     <div ref={ref} className="svg-arrow">
       <SVGCurve curve={curve} curveStyles={curveStyles} />
-      <SVGTriangle props={arrow} />
+      <SVGTriangle props={arrow} pointerStyles={pointerStyles} />
     </div>
   );
 }

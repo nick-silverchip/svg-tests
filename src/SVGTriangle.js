@@ -33,6 +33,7 @@ export default function SVGTriangle({
       xmlns="http://www.w3.org/2000/svg"
       // style={{ border: "1px solid" }}
       // strokeWidth={strokeWidth}
+      className="svg-arrow-pointer"
     >
       <polygon
         fill="black"

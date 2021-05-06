@@ -8,10 +8,35 @@
   align-items: center;
 }
 
-.svg-arrow {
+.svg-straight-arrow {
   position: relative;
   width: 50vw;
   height: 50vh;
+  border: 1px solid;
+  display: flex;
+  align-items: baseline;
+}
+
+.svg-curved-arrow {
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+  border: 1px solid;
+  display: flex;
+  align-items: baseline;
+}
+
+.bracket-container {
+  width: 20vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+}
+.svg-bracket {
+  position: relative;
+  flex: 0.5;
   /* border: 1px solid; */
   display: flex;
   align-items: baseline;

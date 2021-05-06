@@ -7,7 +7,7 @@ export default function SVGCurve({
     startXY = [0, 0],
     endXY = [300, 300],
     centerXY = [150, 150],
-    curveXY = [50, 0],
+    curveXY = [0, 0],
     strokeWidth = 4,
     strokeColor = "#000000",
   },
