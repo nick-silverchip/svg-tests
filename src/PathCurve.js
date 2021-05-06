@@ -4,7 +4,7 @@ export default function PathCurve({
   startXY = [0, 0],
   endXY = [50, 50],
   centerXY = [25, 25],
-  curveXY = [0, 0],
+  curveXY = [0, 15],
   strokeWidth = 3,
   strokeColor = "#000000",
   customStyles = {},
