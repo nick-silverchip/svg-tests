@@ -8,7 +8,6 @@ export default function PathCurve({
   strokeWidth = 3,
   strokeColor = "#000000",
   customStyles = {},
-  fill = "transparent",
 }) {
   return (
     <path
@@ -16,7 +15,7 @@ export default function PathCurve({
       strokeWidth={strokeWidth}
       d={`M ${startXY[0]} ${startXY[1]} Q ${curveXY[0]} ${curveXY[1]}, ${centerXY[0]} ${centerXY[1]} T ${endXY[0]} ${endXY[1]}`}
       stroke={strokeColor}
-      fill={fill}
+      fill="none"
     />
   );
 }
