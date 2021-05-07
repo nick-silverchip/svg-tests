@@ -36,8 +36,8 @@ function App() {
         className="svg-container"
         style={{ width: "50px", height: "50vh", border: "1px solid" }}
       >
-        {/* <SVGStraightArrow {...straightArrowProps} /> */}
-        <SVGBracket {...bracketProps} />
+        <SVGStraightArrow {...straightArrowProps} />
+        {/* <SVGBracket {...bracketProps} /> */}
       </div>
     </div>
   );
