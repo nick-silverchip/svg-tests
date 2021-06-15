@@ -1,6 +1,7 @@
 import "./App.css";
 import SVGBracket from "./SVGBracket";
 import SVGStraightArrow from "./SVGStraightArrow";
+import SVGCurvedArrow from "./SVGCurvedArrow";
 import { useWindowDimensions } from "./useWindowDimensions";
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
     flipHorizontal: true,
   };
 
+  const curvedArrowProps = {};
+
   return (
     <div className="App">
       <h1>SVG Tests</h1>
@@ -34,10 +37,11 @@ function App() {
       </p>
       <div
         className="svg-container"
-        style={{ width: "50px", height: "50vh", border: "1px solid" }}
+        style={{ width: "50vw", height: "50vh", border: "1px solid" }}
       >
-        <SVGStraightArrow {...straightArrowProps} />
+        {/* <SVGStraightArrow {...straightArrowProps} /> */}
         {/* <SVGBracket {...bracketProps} /> */}
+        <SVGCurvedArrow {...curvedArrowProps} />
       </div>
     </div>
   );
