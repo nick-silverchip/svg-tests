@@ -37,11 +37,11 @@ function App() {
       </p>
       <div
         className="svg-container"
-        style={{ width: "50vw", height: "50vh", border: "1px solid" }}
+        style={{ width: "75vw", height: "75vh", border: "1px solid" }}
       >
-        {/* <SVGStraightArrow {...straightArrowProps} /> */}
+        <SVGStraightArrow {...straightArrowProps} />
         {/* <SVGBracket {...bracketProps} /> */}
-        <SVGCurvedArrow {...curvedArrowProps} />
+        {/* <SVGCurvedArrow {...curvedArrowProps} /> */}
       </div>
     </div>
   );
