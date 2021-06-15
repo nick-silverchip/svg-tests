@@ -48,8 +48,8 @@ export default function SVGTriangle({
 
   return (
     <polygon
-      fill="black"
-      stroke="black"
+      fill="#f7f7f7"
+      stroke="#f7f7f7"
       strokeWidth="0"
       points={`${newCoords.aXY[0]}, ${newCoords.aXY[1]}  ${newCoords.bXY[0]}, ${newCoords.bXY[1]} ${newCoords.cXY[0]}, ${newCoords.cXY[1]} `}
     />

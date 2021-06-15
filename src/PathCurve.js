@@ -6,7 +6,7 @@ export default function PathCurve({
   centerXY = [25, 25],
   curveXY = [0, 15],
   strokeWidth = 3,
-  strokeColor = "#000000",
+  strokeColor = "white",
   customStyles = {},
 }) {
   return (

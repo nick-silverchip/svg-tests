@@ -20,7 +20,7 @@ function SVGBracket({ flipHorizontal = false }) {
     centerXY: [clientWidth / 2, clientHeight * 0.25],
     curveXY: [flipHorizontal ? (clientWidth / 3) * 2 : clientWidth / 3, 0],
     strokeWidth: 3,
-    strokeColor: "#000000",
+    strokeColor: "#f7f7f7",
     customStyles: {},
   };
 
@@ -33,7 +33,7 @@ function SVGBracket({ flipHorizontal = false }) {
       clientHeight / 2,
     ],
     strokeWidth: 3,
-    strokeColor: "#000000",
+    strokeColor: "#f7f7f7",
     customStyles: {},
   };
 

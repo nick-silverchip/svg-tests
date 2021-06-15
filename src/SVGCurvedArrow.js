@@ -36,7 +36,7 @@ function SVGBracket({
     ],
     curveXY: [clientWidth / 3, 0],
     strokeWidth: 3,
-    strokeColor: "#000000",
+    strokeColor: "#f7f7f7",
     customStyles: {},
   };
 

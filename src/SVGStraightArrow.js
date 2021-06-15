@@ -30,7 +30,7 @@ function SVGStraightArrow({
       up ? pointerLength : clientHeight - pointerLength,
     ],
     strokeWidth: 3,
-    strokeColor: "#000000",
+    strokeColor: "#f7f7f7",
     fill: "transparent",
     customStyles: {},
   };
