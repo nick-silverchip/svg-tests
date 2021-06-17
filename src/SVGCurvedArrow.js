@@ -68,7 +68,11 @@ function SVGBracket({
   };
 
   return (
-    <div ref={containerRef} class="bracket-container" style={containerStyle}>
+    <div
+      ref={containerRef}
+      className="bracket-container"
+      style={containerStyle}
+    >
       <SVG {...svgProps}>
         <PathCurve {...curveProps} />
         <PolygonTriangle {...triangleProps} />

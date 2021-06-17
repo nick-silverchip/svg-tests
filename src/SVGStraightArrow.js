@@ -72,7 +72,7 @@ function SVGStraightArrow({
   };
 
   return (
-    <div ref={containerRef} class="arrow-container" style={containerStyle}>
+    <div ref={containerRef} className="arrow-container" style={containerStyle}>
       <SVG {...svgProps}>
         <PathLine {...lineProps} />
         <PolygonTriangle {...triangleProps} />

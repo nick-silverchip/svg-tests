@@ -39,9 +39,9 @@ function App() {
     <div className="App">
       <h1>SVG Tests</h1>
       <div className="svg-container" style={{ width: "75vw", height: "66vh" }}>
-        {/* <SVGStraightArrow {...straightArrowProps} /> */}
+        <SVGStraightArrow {...straightArrowProps} />
         {/* <SVGBracket {...bracketProps} /> */}
-        <SVGCurvedArrow {...curvedArrowProps} />
+        {/* <SVGCurvedArrow {...curvedArrowProps} /> */}
       </div>
       <Controls {...controlProps} />
     </div>
