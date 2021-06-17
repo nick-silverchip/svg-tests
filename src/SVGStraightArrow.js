@@ -33,7 +33,7 @@ function SVGStraightArrow({
   };
 
   const lineProps = {
-    startXY: [left ? clientWidth : 0, up ? clientHeight : 0],
+    startXY: [left ? clientWidth - 10 : 10, up ? clientHeight - 10 : 10],
     endXY: [
       left ? pointerLength : clientWidth - pointerLength,
       up ? pointerLength : clientHeight - pointerLength,

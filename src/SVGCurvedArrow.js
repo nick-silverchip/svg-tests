@@ -34,10 +34,10 @@ function SVGBracket({
   };
 
   const curveProps = {
-    startXY: [flipHorizontal ? clientWidth : 0, 0],
+    startXY: [flipHorizontal ? clientWidth - 10 : 10, 10],
     endXY: [
-      left ? pointerLength : clientWidth - pointerLength,
-      up ? pointerLength : clientHeight - pointerLength,
+      left ? pointerLength + 10 : clientWidth - pointerLength - 10,
+      up ? pointerLength + 10 : clientHeight - pointerLength - 10,
     ],
     centerXY: [
       (clientWidth - pointerLength) / 2 +
@@ -47,7 +47,7 @@ function SVGBracket({
     ],
     curveXY: [
       clientWidth / 3 + (clientWidth / 3) * cp.curveXY[0],
-      0 + (clientHeight / 3) * cp.curveXY[1],
+      10 + (clientHeight / 3) * cp.curveXY[1],
     ],
     strokeWidth: 3,
     strokeColor: "#f7f7f7",
