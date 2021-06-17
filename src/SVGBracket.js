@@ -26,8 +26,8 @@ function SVGBracket({ flipHorizontal = false, cp }) {
     startXY: [flipHorizontal ? clientWidth : 0, 0],
     endXY: [flipHorizontal ? 0 : clientWidth, clientHeight / 2],
     centerXY: [
-      clientWidth / 2 + (clientWidth / 2) * cp.centerXY[0],
-      clientHeight * 0.25 + (clientHeight / 0.25) * cp.centerXY[1],
+      clientWidth / 2 + clientWidth * cp.centerXY[0],
+      clientHeight * 0.25 + clientHeight * cp.centerXY[1],
     ],
     curveXY: [
       flipHorizontal
