@@ -1,5 +1,6 @@
 import { useState, useLayoutEffect, useRef } from "react";
 import SVG from "./SVG";
+import Nodes from "./Nodes";
 import PathLine from "./PathLine";
 import PolygonTriangle from "./PolygonTriangle";
 import { calcAngle } from "./utils";
@@ -11,6 +12,7 @@ function SVGStraightArrow({
   verticalOnly = false,
   up = false,
   left = false,
+  cp,
 }) {
   const containerRef = useRef(document.createElement("div"));
 
@@ -66,7 +68,7 @@ function SVGStraightArrow({
   const containerStyle = {
     width: "100%",
     height: "100%",
-    border: "1px solid red",
+    border: cp.showBorder ? "1px solid red" : "unset",
   };
 
   return (
@@ -74,6 +76,7 @@ function SVGStraightArrow({
       <SVG {...svgProps}>
         <PathLine {...lineProps} />
         <PolygonTriangle {...triangleProps} />
+        {cp.showNodes && <Nodes {...lineProps} />}
       </SVG>
     </div>
   );

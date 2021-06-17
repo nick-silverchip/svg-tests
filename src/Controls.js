@@ -5,11 +5,15 @@ export default function Controls({
   setCenterXY,
   curveXY,
   setCurveXY,
+  showNodes,
+  setShowNodes,
+  showBorder,
+  setShowBorder,
 }) {
   return (
     <div className="controls">
       <div className="control-col">
-        <label for="ip-centerx">Center X</label>
+        <label htmlFor="ip-centerx">Center X</label>
         <input
           id="ip-centerxy"
           type="range"
@@ -21,7 +25,7 @@ export default function Controls({
         />
       </div>
       <div className="control-col">
-        <label for="ip-centery">Center Y</label>
+        <label htmlFor="ip-centery">Center Y</label>
         <input
           id="ip-centery"
           type="range"
@@ -33,7 +37,23 @@ export default function Controls({
         />
       </div>
       <div className="control-col">
-        <label for="ip-curvex">Curve X</label>
+        <label htmlFor="ip-shownodes">Show nodes</label>
+        <input
+          id="ip-shownodes"
+          type="checkbox"
+          value={showNodes}
+          onChange={() => setShowNodes(!showNodes)}
+        />
+        <label htmlFor="ip-showborder">Show border</label>
+        <input
+          id="ip-showborder"
+          type="checkbox"
+          value={showBorder}
+          onChange={() => setShowBorder(!showBorder)}
+        />
+      </div>
+      <div className="control-col">
+        <label htmlFor="ip-curvex">Curve X</label>
         <input
           id="ip-curvex"
           type="range"
@@ -45,7 +65,7 @@ export default function Controls({
         />
       </div>
       <div className="control-col">
-        <label for="ip-curvex">Curve Y</label>
+        <label htmlFor="ip-curvex">Curve Y</label>
         <input
           id="ip-curvey"
           type="range"

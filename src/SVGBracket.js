@@ -1,6 +1,7 @@
 import { useState, useLayoutEffect, useRef } from "react";
 import SVG from "./SVG";
 import PathCurve from "./PathCurve";
+import Nodes from "./Nodes";
 
 function SVGBracket({ flipHorizontal = false, cp }) {
   const containerRef = useRef(document.createElement("div"));
@@ -61,14 +62,24 @@ function SVGBracket({ flipHorizontal = false, cp }) {
     width: "100%",
     height: "100%",
     maxWidth: "25vw",
-    border: "1px solid red",
+    border: cp.showBorder ? "1px solid red" : "unset",
   };
 
   return (
-    <div ref={containerRef} class="bracket-container" style={containerStyle}>
+    <div
+      ref={containerRef}
+      className="bracket-container"
+      style={containerStyle}
+    >
       <SVG {...svgProps}>
         <PathCurve {...topCurveProps} />
         <PathCurve {...bottomCurveProps} />
+        {cp.showNodes && (
+          <>
+            <Nodes {...topCurveProps} />
+            <Nodes {...bottomCurveProps} />
+          </>
+        )}
       </SVG>
     </div>
   );

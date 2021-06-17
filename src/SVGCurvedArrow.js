@@ -1,5 +1,6 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import SVG from "./SVG";
+import Nodes from "./Nodes";
 import PathCurve from "./PathCurve";
 import { calcAngle } from "./utils";
 import PolygonTriangle from "./PolygonTriangle";
@@ -63,7 +64,7 @@ function SVGBracket({
   const containerStyle = {
     width: "100%",
     height: "100%",
-    border: "1px solid red",
+    border: cp.showBorder ? "1px solid red" : "unset",
   };
 
   return (
@@ -71,6 +72,7 @@ function SVGBracket({
       <SVG {...svgProps}>
         <PathCurve {...curveProps} />
         <PolygonTriangle {...triangleProps} />
+        {cp.showNodes && <Nodes {...curveProps} />}
       </SVG>
     </div>
   );
