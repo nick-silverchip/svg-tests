@@ -1,12 +1,19 @@
-import { useRef } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
 import SVG from "./SVG";
 import PathCurve from "./PathCurve";
 
 function SVGBracket({ flipHorizontal = false, cp }) {
-  const containerRef = useRef({ current: { clientHeight: 0, clientWidth: 0 } });
-  const {
-    current: { clientHeight, clientWidth },
-  } = containerRef;
+  const containerRef = useRef(document.createElement("div"));
+
+  const [clientHeight, setClientHeight] = useState(0);
+  const [clientWidth, setClientWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    if (containerRef.current) {
+      setClientWidth(containerRef.current.clientWidth);
+      setClientHeight(containerRef.current.clientHeight);
+    }
+  }, [containerRef.current.clientHeight, containerRef.current.clientWidth]);
 
   const svgProps = {
     width: clientWidth,

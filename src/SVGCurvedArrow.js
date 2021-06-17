@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import SVG from "./SVG";
 import PathCurve from "./PathCurve";
 import { calcAngle } from "./utils";
@@ -12,11 +12,19 @@ function SVGBracket({
   left = false,
   horizontalOnly = true,
   verticalOnly = false,
+  cp,
 }) {
-  const containerRef = useRef({ current: { clientHeight: 0, clientWidth: 0 } });
-  const {
-    current: { clientHeight, clientWidth },
-  } = containerRef;
+  const containerRef = useRef(document.createElement("div"));
+
+  const [clientHeight, setClientHeight] = useState(0);
+  const [clientWidth, setClientWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    if (containerRef.current) {
+      setClientWidth(containerRef.current.clientWidth);
+      setClientHeight(containerRef.current.clientHeight);
+    }
+  }, [containerRef.current.clientHeight, containerRef.current.clientWidth]);
 
   const svgProps = {
     width: clientWidth,
@@ -31,10 +39,15 @@ function SVGBracket({
       up ? pointerLength : clientHeight - pointerLength,
     ],
     centerXY: [
-      (clientWidth - pointerLength) / 2,
-      (clientHeight - pointerLength) / 2,
+      (clientWidth - pointerLength) / 2 +
+        (clientWidth - pointerLength) * cp.centerXY[0],
+      (clientHeight - pointerLength) / 2 +
+        (clientHeight - pointerLength) * cp.centerXY[1],
     ],
-    curveXY: [clientWidth / 3, 0],
+    curveXY: [
+      clientWidth / 3 + (clientWidth / 3) * cp.curveXY[0],
+      0 + (clientHeight / 3) * cp.curveXY[1],
+    ],
     strokeWidth: 3,
     strokeColor: "#f7f7f7",
     customStyles: {},
