@@ -1,4 +1,5 @@
 import React from "react";
+import { rotate } from "./utils";
 
 export default function SVGTriangle({
   startXY = [50, 50],
@@ -6,15 +7,6 @@ export default function SVGTriangle({
   height = 15,
   angle = 0,
 }) {
-  const rotate = (cx, cy, x, y, angle) => {
-    let radians = (Math.PI / 180) * (angle * -1);
-    let cos = Math.cos(radians);
-    let sin = Math.sin(radians);
-    let nx = cos * (x - cx) + sin * (y - cy) + cx;
-    let ny = cos * (y - cy) - sin * (x - cx) + cy;
-    return [nx, ny];
-  };
-
   const startCoords = {
     cxcy: [startXY[0], startXY[1]],
     aXY: [startXY[0], startXY[1] - height / 2],
